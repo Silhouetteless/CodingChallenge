@@ -1,20 +1,19 @@
 import java.util.*;
 import java.io.*;
 
-
-
-class Solution{
+/**
+*
+* Input a number to get its data type.
+*
+*/
+class JavaDatatypes{
     public static void main(String []argh)
     {
-
-
-
         Scanner sc = new Scanner(System.in);
         int t=sc.nextInt();
 
         for(int i=0;i<t;i++)
         {
-
             try
             {
                 long x=sc.nextLong();
@@ -22,18 +21,12 @@ class Solution{
                 if(x>=-128 && x<=127)System.out.println("* byte");
                 if(x>=-32768 && x<=32767)System.out.println("* short");
                 if(x>=-Math.pow(2,31) && x<=Math.pow(2,32)-1)System.out.println("* int");
-                if(x>=-Math.pow(2,63) && x<=Math.pow(2,64)-1)System.out.println("* long");
-            
-               
+                if(x>=-Math.pow(2,63) && x<=Math.pow(2,64)-1)System.out.println("* long");                  
             }
             catch(Exception e)
             {
                 System.out.println(sc.next()+" can't be fitted anywhere.");
             }
-
         }
     }
 }
-
-
-

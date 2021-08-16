@@ -8,7 +8,7 @@ import java.util.regex.*;
 
 
 
-public class Solution {
+public class JavaLoops {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
