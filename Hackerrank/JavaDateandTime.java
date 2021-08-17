@@ -12,7 +12,7 @@ public class JavaDateandTime {
             System.out.println("------");
 
 
-            System.out.println("Write down the date: month, day, year. Insert 0 in front of any single digit number. (E.g 08 03 2017)");
+            System.out.println("Write down the date: month  day year. Insert 0 in front of any single digit number. (E.g 08 03 2017)");
 
           while (true) {
             Scanner scan = new Scanner(System.in);
