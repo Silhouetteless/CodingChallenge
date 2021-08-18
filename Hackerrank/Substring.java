@@ -24,7 +24,7 @@ public class Substring {
                     */
                     
             
-            if(S.matches("^[a-zA-Z][a-zA-Z\\s]+$")) {
+            if(S.matches("^[a-zA-Z][a-zA-Z\\s]*$")) {
                 System.out.println(S.substring(start, end)); 
             } 
             else {
