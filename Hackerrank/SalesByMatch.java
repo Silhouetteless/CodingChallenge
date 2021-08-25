@@ -48,7 +48,7 @@ class Result {
         }
           
         return pairs;
-        
+
 // Agregar pairs al mapa:
 // map.put(key, value);
 // obtener value by key:
@@ -58,7 +58,7 @@ class Result {
 
         for(int x : ar) {
 
-            if (counter.get() == null) {
+            if (counter.get(x) == null) {
               counter.put(x, 1); //creo nuevo entry con valor 1
             } else {
               counter.put(x, counter.get(x)+1); //lo guardo en entry existente sumandole +1
