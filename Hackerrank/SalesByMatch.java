@@ -15,88 +15,69 @@ class Result {
 
       int pairs = 0; //we start with an empty pool of pairs
 
-      //for each x Integer in ar List; no necesitamos n porque ya esta determinado con el numero de los integers en ar list
-      for(int x : ar) {
+                                    /* ELVIS OPERATOR: 
+
+                                          public static void elvis(){
+
+                                            int a = 5;
+
+                                            // ?: se parece a Elvis
+
+                                            int b = (a == 5 ? 6 : 1);
+
+                                            if (a == 5){
+                                              b = 6
+                                            } else {
+                                              b = 1
+                                            }
+
+                                          }
+
+                                    */
         
-        //METHOD 1:                 //!=si no
-        counter.put(x, counter.get(x) != null ? counter.get(x)+1 : 1); //primera vez no existe y esta vacio; si no es null obtiene el valor y suma 1, si es null dale 1
-        if((counter.get(x).intValue() % 2 == 0)) { //if the value is divisible by 2 we increase pairs
-          pairs++;
+        //METHOD 1 (with Elvis operator): 
+
+
+//for each x Integer in ar List; no necesitamos n porque ya esta determinado con el numero de los integers en ar list
+        for(int x : ar) {              //!=si no
+              counter.put(x, counter.get(x) != null ? counter.get(x)+1 : 1); //primera vez no existe y esta vacio; si no es null obtiene el valor y suma 1, si es null dale 1
+
+              if((counter.get(x).intValue() % 2 == 0)) { //if the value is divisible by 2 we increase pairs
+                pairs++;
+              }
         }
-      return pairs;
+          
+        return pairs;
+        
 // Agregar pairs al mapa:
 // map.put(key, value);
 // obtener value by key:
 // map.get(key);
 
-        //METHOD 2:
+        /*METHOD 2:
 
         for(int x : ar) {
-          if (counter.get() == null) {
-            counter.put(x, 1); //creo nuevo entry con valor 1
-          } else {
-            counter.put(x, counter.get(x)+1); //lo guardo en entry existente sumandole +1
-          }
-          if((counter.get(x).intValue() % 2 == 0)) {
-            pairs++;
-          }
-         }
-      }
 
+            if (counter.get() == null) {
+              counter.put(x, 1); //creo nuevo entry con valor 1
+            } else {
+              counter.put(x, counter.get(x)+1); //lo guardo en entry existente sumandole +1
+            }
 
-
-
-    }
-
-//key es unico, no se puede repetir
-
-
-
-
-    public static int sockMerchantFelipeVersion(int n, List<Integer> ar) {    
-        Map<Integer, Integer> counter = new HashMap<Integer, Integer>();
-        int pairs = 0; 
-
-        // for each x Integer in ar List
-        for(int x : ar) { 
-          
-            counter.put(x, counter.get(x) != null ? counter.get(x)+1 : 1); //!= si no 
-            //primera vez no existe y esta vacio; si no es null obtiene el valor y suma 1, si es nulo 
-
-          if (counter.get(x) == null) {
-            counter.put(x, 1); //creo nuevo entry con valor 1
-          } else {
-            counter.put(x, counter.get(x)+ 1); //lo guardo en entry existente sumandole +1
-          }
-
-          if((counter.get(x).intValue() % 2 == 0)){
-            pairs++; 
-          }
+            if((counter.get(x).intValue() % 2 == 0)) {
+              pairs++;
+            }
         }
+
         return pairs;
-    }   
+        */
+      
 
 
-/* ELVIS OPERATOR: 
-
-    public static void elvis(){
-
-       int a = 5;
-
-      // ?:
-
-       int b = (a == 5 ? 6 : 1);
-
-       if (a == 5){
-         b = 6
-       } else {
-         b = 1
-       }
 
 
     }
 
-*/
 }
 
 public class SalesByMatch {
