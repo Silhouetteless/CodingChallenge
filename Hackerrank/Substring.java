@@ -7,6 +7,7 @@ import java.util.regex.*;
 public class Substring {
 
     public static void main(String[] args) {
+      
         Scanner in = new Scanner(System.in);
         String S = in.next();
         int start = in.nextInt();
@@ -14,7 +15,9 @@ public class Substring {
         
         
                     /* regex - regular expressions
+
                     http://www.roblocher.com/technotes/regexp.html
+
                     e.g.:
                     g - global; anywhere in the string --> match all
                     i - case insensitive
