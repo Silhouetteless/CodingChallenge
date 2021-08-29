@@ -23,7 +23,7 @@ public class JavaHashset {
 
         java.util.HashSet<String> pairs =  new java.util.HashSet<String>();
         for (int i = 0 ; i < t ; i++) {
-            pairs.add(pair_left[i]+"_"+pair_right[i]);
+            pairs.add(pair_left[i]+"_"+pair_right[i]); //why _
             System.out.println(pairs.size());
         }
 
