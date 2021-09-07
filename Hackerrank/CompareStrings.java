@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CompareStr {
+public class CompareStrings {
 
     public static String getSmallestAndLargest(String s, int k) {
 
@@ -9,8 +9,8 @@ public class CompareStr {
         String smallest = currentSubstring;
         String largest = currentSubstring;
         
-        // -k because it only goes up to the letter before the ending boundy, which is k
-        for (int i = 1; i<=s.length() - k; i++) {
+        // -k because it only goes up to the letter before the ending boundry, which is k
+        for (int i = 1; i <= s.length() - k; i++) {
             currentSubstring = s.substring(i, i + k); //we are checking indexes ahead, so we had to subtract k before
             if(currentSubstring.compareTo(largest) > 0) { largest = currentSubstring;
             }
