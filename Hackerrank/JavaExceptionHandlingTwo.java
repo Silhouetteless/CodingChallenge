@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class MyCalculator {
     /*
     * Create the method long power(int, int) here.
