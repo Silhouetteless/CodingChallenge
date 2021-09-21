@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 
+// Java listing is cool
 public class JavaList {
 
     public static void main(String[] args) {
