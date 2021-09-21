@@ -28,6 +28,6 @@ public class JavaExceptionHandling {
     
     }
     
-    
+    scan.close();
 }
  
