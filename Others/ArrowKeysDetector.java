@@ -8,6 +8,7 @@ public class ArrowKeysDetector {
 
   //making a constractor:
   public ArrowKeysDetector() {
+    
     JFrame frame = new JFrame();
     frame.setVisible(true); //sets the GUI to be visible
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //says what happens when you click the close button
