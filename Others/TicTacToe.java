@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 
 
-public class TiTacToe {
+public class TicTacToe {
 
     static ArrayList<Integer> playerPositions = new ArrayList<Integer>();
     static ArrayList<Integer> cpuPositions = new ArrayList<Integer>();
@@ -14,7 +14,8 @@ public class TiTacToe {
 
     //2D Array of chars
     //char uses single quotes
-      char [][] gameBoard = {{' ', '|', ' ', '|', ' '},
+      char [][] gameBoard = {
+                            {' ', '|', ' ', '|', ' '},
                             {'-', '+', '-', '+', '-'},
                             {' ', '|', ' ', '|', ' '},
                             {'-', '+', '-', '+', '-'},
@@ -30,10 +31,11 @@ public class TiTacToe {
               System.out.println("Enter your placement (1-9): ");
 
               int playerPos = scan.nextInt();
+              
               //not overwriting positions:
-              while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPos)); {
-                System.out.println("Position taken.");
-                playerPos = scan.nextInt();
+              while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPos)){
+                        System.out.println("Position taken.");
+                        playerPos = scan.nextInt();
               }
 
               placePiece(gameBoard, playerPos, "player");
@@ -41,19 +43,24 @@ public class TiTacToe {
               //random positioning:
               Random rand = new Random();
               int cpuPos = rand.nextInt(9) + 1;
+              
               //not overwriting positions:
-              while(playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPos)); {
-                int cpuPos = rand.nextInt(9) + 1;
+              while(playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPos)) {
+                        cpuPos = rand.nextInt(9) + 1;
+              }
+
               placePiece(gameBoard, cpuPos, "cpu");
 
               printGameBoard(gameBoard);
 
               String result = checkWinner();
               System.out.println(result);
-      }
-      
+              
 
-      scan.close();
+        }
+    
+
+      
 
     }
 
@@ -78,10 +85,10 @@ public class TiTacToe {
 
       if(user.equals("player")){
           symbol = 'X';
-          playerPositions.add(pos);
+          playerPositions.add(position);
       } else if(user.equals("cpu")){
           symbol = 'O';
-          cpuPositions.add(pos);
+          cpuPositions.add(position);
       }
 
            //switching empty space with X:
