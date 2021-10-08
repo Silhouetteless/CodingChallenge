@@ -33,7 +33,6 @@ public class TextFileReader {
             }
        
 
-
         FileWriter writer = new FileWriter("/Users/.../newfile.txt");
         writer.write(fileContent);
         writer.close();
