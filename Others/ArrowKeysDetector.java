@@ -32,43 +32,43 @@ public class ArrowKeysDetector {
     right.setText("Right: 0");
     left.setText("Left: 0");
 
-    //to detect keys use "key event listener"
-    frame.addKeyListener(new KeyListener() {
+      //to detect keys use "key event listener"
+      frame.addKeyListener(new KeyListener() {
 
-      int upCount = 0;
-      int downCount = 0;
-      int rightCount = 0;
-      int leftCount = 0;
+        int upCount = 0;
+        int downCount = 0;
+        int rightCount = 0;
+        int leftCount = 0;
 
-        @Override 
-        public void keyTyped(KeyEvent e) {
+          @Override 
+          public void keyTyped(KeyEvent e) {
 
-        }
+          }
 
-        @Override
-        public void keyPressed(KeyEvent e) {
-              int keyCode = e.getKeyCode();
-              //switch case:
-              switch(keyCode) {
-                case KeyEvent.VK_UP:
-                    up.setText("Up: " + Integer.toSTring(upCount++));
-                    break;
-                case KeyEvent.VK_DOWN:
-                    down.setText("Down: " + Integer.toSTring(upCount++));
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    right.setText("Right: " + Integer.toSTring(upCount++));
-                    break;
-                case KeyEvent.VK_LEFT:
-                    left.setText("Left: " + Integer.toSTring(upCount++));
-                    break;   
-              }
-        }
+          @Override
+          public void keyPressed(KeyEvent e) {
+                int keyCode = e.getKeyCode();
+                //switch case:
+                switch(keyCode) {
+                  case KeyEvent.VK_UP:
+                      up.setText("Up: " + Integer.toSTring(upCount++));
+                      break;
+                  case KeyEvent.VK_DOWN:
+                      down.setText("Down: " + Integer.toSTring(upCount++));
+                      break;
+                  case KeyEvent.VK_RIGHT:
+                      right.setText("Right: " + Integer.toSTring(upCount++));
+                      break;
+                  case KeyEvent.VK_LEFT:
+                      left.setText("Left: " + Integer.toSTring(upCount++));
+                      break;   
+                }
+          }
 
-        @Override
-        public void keyReleased(KeyEvent e) {
-          
-        }
+          @Override
+          public void keyReleased(KeyEvent e) {
+            
+          }
 
     });
 
