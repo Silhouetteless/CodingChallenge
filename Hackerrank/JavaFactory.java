@@ -1,21 +1,24 @@
 import java.util.*;
 import java.security.*;
+
 interface Food {
 	 public String getType();
-	}
-	class Pizza implements Food {
+}
+
+class Pizza implements Food {
 	 public String getType() {
 	 return "Someone ordered a Fast Food!";
 	 }
-	}
+}
 
-	class Cake implements Food {
+class Cake implements Food {
 
 	 public String getType() {
 	 return "Someone ordered a Dessert!";
 	 }
-	}
-	class FoodFactory {
+}
+	
+class FoodFactory {
 		public Food getFood(String order) {
 
     //METHOD 1:
@@ -34,7 +37,7 @@ interface Food {
 
 	}//End of factory class
 
-	public class Solution {
+public class Solution {
 
 	 public static void main(String args[]){
 			Do_Not_Terminate.forbidExit();
@@ -58,6 +61,7 @@ interface Food {
 	 }
 
 	}
+
 	class Do_Not_Terminate {
 		 
 	    public static class ExitTrappedException extends SecurityException {
@@ -76,5 +80,5 @@ interface Food {
 	        };
 	        System.setSecurityManager(securityManager);
 	    }
-	}	
+}	
 		
