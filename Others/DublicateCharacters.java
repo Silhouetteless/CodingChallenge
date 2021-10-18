@@ -17,8 +17,6 @@ public static void main(String[] args) {
       }
     }
    characters += current; //adding characters 
-   
-
   }
 
   System.out.println("duplicates: " + duplicates);
