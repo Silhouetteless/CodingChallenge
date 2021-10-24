@@ -6,40 +6,42 @@ import java.util.Arrays;
 
 public class BubbleSort {
  
-  public static void sorting(int array[]) { 
-     
+  public static int[] sorting(int array[]) { 
       int n = array.length;
-
+      int [] arrayFinal =  new int[n];
       for (int i = 0; i < n; i++) { 
         //starting form second item so j = 1
         for (int j = 1; j < n; j++) { 
-                    /*
+                    
 
-                    at each iteration compare item at index j with the previous item
-                    if array of j is smaller than the previous one it means these two items are out of order so we need to swap them
+                    // at each iteration compare item at index j with the previous item
+                    // if array of j is smaller than the previous one it means these two items are out of order so we need to swap them
                     
                     if(array[j] < array[j - 1]) {
+           arrayFinal = swappingMethod(array, j, j - 1);
+
+                      /*
                       //copy j into a temporal variable
                       var temp = array[j];
                       //set array of j to the previous item
                       array[j] = array[j - 1];
                       //set the item stored in the temporal variable into the array j - 1
                       array[j - 1] = temp;
+                       */
                     }
-        We will switch all this with a swappingMethod:
-                    */
-            swappingMethod(array, j, j - 1);
+       // We will switch all this with a swappingMethod:
+                   
         }
-      }
-         
+      }  
+
+      return arrayFinal;      
   } 
 
-  public static void swappingMethod(int[] array, int index1, int index2) {
-
+  public static int[] swappingMethod(int[] array, int index1, int index2) {
       var temp = array[index1];
       array[index1] = array[index2];
       array[index2] = temp;
-                          
+      return array;               
   }
 
   public static void printArray(int array[]) {
@@ -50,7 +52,6 @@ public class BubbleSort {
   }
 
   public static void main(String[] args) {
-
       //getting input from the user
       Scanner scan = new Scanner(System.in);
       System.out.println("Enter number of elements in an array: ");
@@ -61,26 +62,15 @@ public class BubbleSort {
         array[k]=scan.nextInt();  
       }  
 
-      System.out.println("Your sorted array: ");
+      System.out.println("Your array: ");
       printArray(array);
+
+      System.out.println("");
+
       //sorting array
-      sorting(array);
+      int[] arrayNuevo = sorting(array);
       
       System.out.println("Your sorted array: ");
-      printArray(array);
-
+      printArray(arrayNuevo);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
