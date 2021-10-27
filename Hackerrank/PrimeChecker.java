@@ -5,7 +5,7 @@ import java.math.*;
 import java.util.regex.*;
 import java.lang.reflect.*;
 import static java.lang.System.in; //to get rif of BufferReader error
-
+ 
 class Prime {
     void checkPrime(int... numbers) {
         for (int num : numbers) {
