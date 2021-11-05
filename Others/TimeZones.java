@@ -44,9 +44,9 @@ public class TimeZones {
         System.out.println("The time you entered is: " + inputTimePL);
         break;
       case 2: 
-        System.out.println("Enter time:\n (E.g 17:34 enter 1734) \n ");
+        System.out.println("Enter time:\n (E.g 17:34 enter 1734)");
         String inputTimeJP = scan.nextLine();
-        
+
         //String [] splitTimeJP = inputTimeJP.split(":");
 
         //System.out.println("The array: " + splitTimeJP);
