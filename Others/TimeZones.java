@@ -3,6 +3,8 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Scanner;
 
 public class TimeZones {
@@ -29,7 +31,20 @@ public class TimeZones {
    System.out.println("Poland: " + dformatPL.format(datePL));
    System.out.println("Japan: " + dformatJP.format(dateJP));
   
-
+   // displaying hour in HH format
+SimpleDateFormat simpleformatPL = new SimpleDateFormat("HH");
+String strHourPL = simpleformatPL.format(new Date());
+SimpleDateFormat simpleformatJP = new SimpleDateFormat("HH");
+String strHourJP = simpleformatJP.format(new Date());
+  
+  //calculate time difference
+  long PL1 = Long.parseLong(strHourPL);
+  long JP1 = Long.parseLong(strHour);
+Instant start = Instant.ofEpochMilli(PL1);
+//your code
+Instant end = Instant.ofEpochMilli(JP1);
+Duration timeElapsed = Duration.between(start, end);
+System.out.println("Time taken: "+ timeElapsed.toMillis() +" milliseconds");
 
 
 
