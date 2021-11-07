@@ -111,10 +111,10 @@ public class TimeZones {
 
           Calendar calJP = Calendar.getInstance(); // creates calendar
           calJP.setTime(inputTimeJP);               // sets calendar time/date
-          calJP.add(Calendar.HOUR, count);      // adds one hour
+          calJP.add(Calendar.HOUR, -count);      // adds one hour
                                        // returns new date object plus one hour
 
-          System.out.println("It is: " + calJP.getTime() + " in Japan.");
+          System.out.println("It is: " + calJP.getTime() + " in Poland.");
                     
                     break;
 
