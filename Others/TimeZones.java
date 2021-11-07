@@ -11,64 +11,117 @@ public class TimeZones {
 
   public static void main(String[] args) {
 
-    // Calendar calendar = new GregorianCalendar();
-    // TimeZone timeZone = calendar.getTimeZone();
+    System.out.println("Welcome to TimeCalculator for Poland and Japan. Enter the time in one of those countries to find out the time at other country.");
+    System.out.println("---------");
 
-    // TimeZone timeZone = TimeZone.getDefault();
-    // TimeZone timeZone = TimeZone.getTimeZone("Europe/Copenhagen");
-    TimeZone timePL = TimeZone.getTimeZone("CET");
-    Date datePL = new Date();
-    DateFormat dformatPL = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    // set the time Zone to Date Format time Zone
-    dformatPL.setTimeZone(timePL);
+    //setting Polish timezone:
+        TimeZone timePL = TimeZone.getTimeZone("CET");
+        Date datePL = new Date();
+        DateFormat dformatPL = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        dformatPL.setTimeZone(timePL);
+      
+      System.out.println("Current time in Poland: " + dformatPL.format(datePL));
 
-    TimeZone timeJP = TimeZone.getTimeZone("JST");
-    Date dateJP = new Date();
-    DateFormat dformatJP = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    // set your local time Zone to your Date Format time Zone
-    dformatJP.setTimeZone(timeJP);
-    
-   System.out.println("Poland: " + dformatPL.format(datePL));
-   System.out.println("Japan: " + dformatJP.format(dateJP));
+    //setting Japanese timezone:
+        TimeZone timeJP = TimeZone.getTimeZone("JST");
+        Date dateJP = new Date();
+        DateFormat dformatJP = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        dformatJP.setTimeZone(timeJP);
+      
+      System.out.println("Current time in Japan: " + dformatJP.format(dateJP));
+
   
-   // displaying hour in HH format
-SimpleDateFormat simpleformatPL = new SimpleDateFormat("HH");
-String strHourPL = simpleformatPL.format(new Date());
-SimpleDateFormat simpleformatJP = new SimpleDateFormat("HH");
-String strHourJP = simpleformatJP.format(new Date());
+    //displaying hour in HH format
+        SimpleDateFormat simpleformatPL = new SimpleDateFormat("HH");
+        simpleformatPL.setTimeZone(timePL);
+        String strHourPL = simpleformatPL.format(datePL);
+
+        SimpleDateFormat simpleformatJP = new SimpleDateFormat("HH");
+        simpleformatJP.setTimeZone(timeJP);
+        String strHourJP = simpleformatJP.format(dateJP);
   
-  //calculate time difference
-  long PL1 = Long.parseLong(strHourPL);
-  long JP1 = Long.parseLong(strHour);
-Instant start = Instant.ofEpochMilli(PL1);
-//your code
-Instant end = Instant.ofEpochMilli(JP1);
-Duration timeElapsed = Duration.between(start, end);
-System.out.println("Time taken: "+ timeElapsed.toMillis() +" milliseconds");
+    //calculate time difference
+        long PL1 = Long.parseLong(strHourPL);
+        long JP1 = Long.parseLong(strHourJP);
+        Instant start = Instant.ofEpochMilli(PL1);
+      
+        Instant end = Instant.ofEpochMilli(JP1);
+        Duration timeElapsed = Duration.between(start, end);
 
+        long timeDifference = timeElapsed.toMillis();
 
+        int count = 0;
+        if(timeDifference == 7) {
+            System.out.print("It is summer time in Poland. ");
+            count = 7;
+        } else{
+            System.out.print("It is winter time in Poland. ");
+            count = 8;
+        }
+      
+      System.out.println("The current time difference is " + timeDifference + " hours.");
 
-     Scanner scan = new Scanner(System.in);
+    //getting input
 
-    System.out.println("Enter timezone: 1)Poland 2)Japan ");
-    int inputZone = scan.nextInt();
-    switch(inputZone) {
-      case 1: 
-        System.out.println("Enter time:\n (E.g 17:34 enter 1734) \n ");
-        int inputTimePL = scan.nextInt();
-        System.out.println("The time you entered is: " + inputTimePL);
-        break;
-      case 2: 
-        System.out.println("Enter time:\n (E.g 17:34 enter 1734)");
-        String inputTimeJP = scan.nextLine();
+        Scanner scan = new Scanner(System.in);
 
-        //String [] splitTimeJP = inputTimeJP.split(":");
+      System.out.println("Enter timezone: 1)Poland 2)Japan ");
 
-        //System.out.println("The array: " + splitTimeJP);
-        
-        System.out.println("The time you entered is: " + inputTimeJP);
-        break;
-    } 
+        int inputZone = scan.nextInt();
+
+        switch(inputZone) {
+          case 1: 
+                    System.out.println("Enter your time:\nFormat: yyyy/MM/dd-HH:mm \n(E.g Nov 13 1992 14:03 enter 1992/11/13-14:03) \n ");
+                    String inputPL = scan.next();
+
+          SimpleDateFormat dateFormatPL = new SimpleDateFormat("yyyy/MM/dd-HH:mm");
+                        Date inputTimePL = null;
+                        try {
+                            //Parsing the String
+                            inputTimePL = dateFormatPL.parse(inputPL);
+                        } catch (Exception e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                        System.out.println("The time you entered is: " + inputTimePL);
+
+          Calendar calPL = Calendar.getInstance(); // creates calendar
+          calPL.setTime(inputTimePL);               // sets calendar time/date
+          calPL.add(Calendar.HOUR, count);      // adds one hour
+                                       // returns new date object plus one hour
+
+          System.out.println("It is: " + calPL.getTime() + " in Japan.");
+
+                  break;
+
+          case 2: 
+                    System.out.println("Enter your time:\nFormat: yyyy/MM/dd-HH:mm \n(E.g Nov 13 1992 14:03 enter 1992/11/13-14:03) \n ");
+                    String inputJP = scan.next();
+
+          SimpleDateFormat dateFormatJP = new SimpleDateFormat("yyyy/MM/dd-HH:mm");
+                        Date inputTimeJP = null;
+                        try {
+                            //Parsing the String
+                            inputTimeJP = dateFormatJP.parse(inputJP);
+                        } catch (Exception e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                        System.out.println("The time you entered is: " + inputTimeJP);
+
+          Calendar calJP = Calendar.getInstance(); // creates calendar
+          calJP.setTime(inputTimeJP);               // sets calendar time/date
+          calJP.add(Calendar.HOUR, count);      // adds one hour
+                                       // returns new date object plus one hour
+
+          System.out.println("It is: " + calJP.getTime() + " in Japan.");
+                    
+                    break;
+
+          default:
+
+          System.out.println("Please enter 1 for Poland and 2 for Japan.");
+        } 
     
      
 
