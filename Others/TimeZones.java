@@ -11,7 +11,7 @@ public class TimeZones {
 
   public static void main(String[] args) {
 
-    System.out.println("Welcome to TimeCalculator for Poland and Japan. Enter the time in one of those countries to find out the time at other country.");
+    System.out.println("Welcome to TimeCalculator for Poland and Japan. Enter the time in one of those countries to find out the time at the other country.");
     System.out.println("---------");
 
     //setting Polish timezone:
