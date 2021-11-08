@@ -123,7 +123,8 @@ public class TimePLvsJP {
           System.out.println("Please enter 1 for Poland and 2 for Japan.");
         } 
     
-     
+     //still working on time difference:
+     //thinking of using timezoneone.inDaylightTime(date)
 
   }
 
