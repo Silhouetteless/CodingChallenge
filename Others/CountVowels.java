@@ -20,23 +20,23 @@ class CountVowels {
 	for(int j = 0 ; j < s.length(); j++) {
     ch = s.charAt(j);	
       switch(ch) {
-      case 'a'  :
-      case 'e'  :
-      case 'i'  :
-      case 'o'  :
-      case 'u'  :
-      case 'A'  :
-      case 'E'  :
-      case 'I'  :
-      case 'O'  :	
-      case 'U'  : 
-        vowels++;
-        System.out.print(ch + ", "); 			 
+        case 'a'  :
+        case 'e'  :
+        case 'i'  :
+        case 'o'  :
+        case 'u'  :
+        case 'A'  :
+        case 'E'  :
+        case 'I'  :
+        case 'O'  :	
+        case 'U'  : 
+              vowels++;
+              System.out.println(ch + "  "); 			 
       }	
 	}
 
 	if(vowels == 0) {
-    System.out.println("There are no vowels in a string"); 
+    System.out.println("There are no vowels in a string."); 
   }
 		
 	
