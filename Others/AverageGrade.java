@@ -41,7 +41,8 @@ class AverageGrade {
           }
 
           System.out.println(grades[i]+") = " + currentSum/n);
-    
+          
+    scan.close();
   }
 
 
