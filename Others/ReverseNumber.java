@@ -11,6 +11,7 @@ class ReverseNumber {
     Scanner scan = new Scanner(System.in);
     System.out.println("Enter a number you want to reverse: ");
     int number = scan.nextInt();
+    
     while(number != 0) {
       i = number % 10;
       reverse = (reverse * 10) + i;
