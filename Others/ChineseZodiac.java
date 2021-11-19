@@ -26,7 +26,7 @@ public class ChineseZodiac {
 
         //question 
 
-        System.out.println("Which year were you born?");
+        System.out.println("Which year were you born in?");
 
         
 
