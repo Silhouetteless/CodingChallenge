@@ -4,17 +4,21 @@ class BinarySearch {
 
   public static void main(String args[]) {
  
+    int[] array;
+
     Scanner scan = new Scanner(System.in);
 
     System.out.println("Enter number of items: ");
     int n = scan.nextInt(); 
-    int[] array = new int[n];
- 
-    System.out.println("Enter " + n + " numbers: ");
+    array = new int[n];
+
+    System.out.println("Enter " + n + " numbers: \n Note that numbers need to be in ascending order ");
  
     for (int i = 0; i < n; i++) {
       array[i] = scan.nextInt();
     }
+
+    System.out.println("Array: " + array);
       
  
     System.out.println("Enter value to find: ");
@@ -44,3 +48,5 @@ class BinarySearch {
       
   }
 }
+
+
