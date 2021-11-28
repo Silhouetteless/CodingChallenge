@@ -17,10 +17,11 @@ if((N % 2 == 0) && (N > 20 || (2 < N && N < 5))) {
     System.out.println("Not Weird");
 } else {
     System.out.println("Weird");
-}
+  }
 
 
 
         scanner.close();
-    }
+ 
+  }
 }
