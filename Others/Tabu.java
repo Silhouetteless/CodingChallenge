@@ -1,10 +1,15 @@
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Tabu {
 
 	public static void main(String args[]) {
 
     System.out.println("Enter your sentence. \nPlease bear in mind that \"Muggle\" is a tabu word and will be eliminated:");
+
+    
+
 
     Scanner scan = new Scanner(System.in);
 
@@ -26,9 +31,12 @@ public class Tabu {
     String new_str = "";
 
     
-    
+    Pattern p = Pattern.compile(word, Pattern.CASE_INSENSITIVE);
+            
+
     for (String words : msg) {
   
+    
             // If desired word is found
             if (!words.equals(word)) {
   
@@ -36,7 +44,13 @@ public class Tabu {
                 // word
                 new_str += words + " ";
             }
-        }
+      }
+
+      Matcher m = p.matcher(word); 
+      
+      if (m.find()){
+        new_str = new_str.replace(word, "");
+      }
 
       System.out.print(new_str);
 
