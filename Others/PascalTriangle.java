@@ -19,10 +19,12 @@ public class PascalTriangle {
     public static void main(String args[]){
 	int rows, i, j;
 
+Scanner scan = new Scanner(System.in);
+      
 	//getting number of rows
 	System.out.println("Enter number of rows:");
-	Scanner scanner = new Scanner(System.in);
-	rows = scanner.nextInt();
+	
+	rows = scan.nextInt();
 	scanner.close();
 
 	System.out.println("Pascal Triangle:");
