@@ -34,23 +34,43 @@ public class Tabu {
     Pattern p = Pattern.compile(word, Pattern.CASE_INSENSITIVE);
             
 
-    for (String words : msg) {
+    // for (String words : msg) {
   
     
-            // If desired word is found
-            if (!words.equals(word)) {
+    //         // If desired word is found
+    //         if (!words.equals(word)) {
   
-                // Concate the word not equal to the given
-                // word
-                new_str += words + " ";
-            }
-      }
+    //             // Concate the word not equal to the given
+    //             // word
+    //             new_str += words + " ";
+    //         }
+    //   }
 
-      Matcher m = p.matcher(word); 
+    //   Matcher m = p.matcher(word); 
       
-      if (m.find()){
-        new_str = new_str.replace(word, "");
-      }
+    //   if (m.find()){
+    //     new_str = new_str.replace(word, "I see what you did here");
+    //   }
+
+
+    for (String words : msg) {
+  
+        for(int i = 0; i < str.length(); i++) {
+      
+          
+          if (!words.equals(word)) {
+              Matcher m = p.matcher(word);
+              if(words.contains(word)){
+                  while (m.find()) {
+                            words = words.replaceAll(word, " ");
+                        }
+                        // Concate the word not equal to the given
+                        // word
+                        new_str += words + " ";
+              }
+          }
+        } 
+    }
 
       System.out.print(new_str);
 
@@ -58,4 +78,6 @@ public class Tabu {
 
 }
 
+
+    
 
