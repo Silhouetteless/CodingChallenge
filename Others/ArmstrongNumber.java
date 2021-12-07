@@ -17,8 +17,8 @@ class ArmstrongNumber {
       temp = number;
 
       while(number != 0) {
-        digit = number % 10;
-        armNum = armNum + (digit * digit * digit);
+        digit = number % 10; //separating into digits
+        armNum = armNum + (digit * digit * digit); //sum of cubes of the digits
         number = number / 10;
       }
 
