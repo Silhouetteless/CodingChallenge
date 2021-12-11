@@ -7,11 +7,11 @@ public class ArrayOrder {
     
     	
         Scanner scan = new Scanner(System.in);
-        System.out.print("Enter number of elements you want in the array: ");
+        System.out.print("Number of elements in the array: ");
         int elements = scan.nextInt();
     
         int num[] = new int[elements];
-        System.out.println("Enter array elements:");
+        System.out.println("Array elements \n(numbers only): ");
 
         for (int i = 0; i < elements; i++) {
             num[i] = scan.nextInt();
