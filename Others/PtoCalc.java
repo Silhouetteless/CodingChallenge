@@ -46,9 +46,18 @@ public class PtoCalc {
 
    System.out.println("Input day is: " + dayOfWeek);
 
-    for(int i = 0; i > daysOff; i++) {
-      
 
+  System.out.println("Input day is: " + dayOfWeek);
+
+
+
+   int count = 0;
+
+    for(int i = 0; i > daysOff; i++) {
+      if(dayOfWeek != 7 || dayOfWeek != 1){
+        count++;
+      }
+System.out.println(count);
     }
 
     
