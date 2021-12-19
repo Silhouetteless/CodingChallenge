@@ -25,12 +25,12 @@ public class PtoCalc {
 
     SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
-    String startDate = scan.next();
+    String s = scan.next();
     
      Date input = null;
                         try {
                             //Parsing the String
-                            input = format.parse(startDate);
+                            input = format.parse(s);
                         } catch (Exception e) {
                             // TODO Auto-generated catch block
                             e.printStackTrace();
@@ -40,20 +40,32 @@ public class PtoCalc {
 
     Calendar c = Calendar.getInstance();
     c.setTime(input);
+    String startDate = format.format(c.getTime());
 
-    //days of week are indexed starting at 1 for Sunday
+
+
+ //days of week are indexed starting at 1 for Sunday
     int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+    System.out.println("Input day is: " + dayOfWeek);
 
-   System.out.println("Input day is: " + dayOfWeek);
 
 
-  System.out.println("Input day is: " + dayOfWeek);
+    c.add(Calendar.DATE, daysOff); // Adding daysOff
+    String endDate = format.format(c.getTime());
+    System.out.println("Finish date: " + endDate);
+     Calendar endCal = Calendar.getInstance();
+    endCal.setTime(endDate);
 
 
 
    int count = 0;
 
-    for(int i = 0; i > daysOff; i++) {
+ if (c.getTimeInMillis() > endCal.getTimeInMillis()) {
+        endCal.setTime(endDate);
+        c.setTime(startDate);
+    }
+
+    while(c.getTimeInMillis() < endCal.getTimeInMillis()) {
       if(dayOfWeek != 7 || dayOfWeek != 1){
         count++;
       }
