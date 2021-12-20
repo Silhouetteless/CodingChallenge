@@ -53,17 +53,20 @@ public class PtoCalc {
     c.add(Calendar.DATE, daysOff); // Adding daysOff
     String endDate = format.format(c.getTime());
     System.out.println("Finish date: " + endDate);
-     Calendar endCal = Calendar.getInstance();
-    endCal.setTime(endDate);
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE, d MMM yyyy", Locale.ENGLISH);
+    Date formattedDate = Date.parse(endDate, formatter);
+    Calendar endCal = Calendar.getInstance();
+    endCal.setTime(formattedDate);
 
 
 
    int count = 0;
 
- if (c.getTimeInMillis() > endCal.getTimeInMillis()) {
-        endCal.setTime(endDate);
-        c.setTime(startDate);
-    }
+//  if (c.getTimeInMillis() > endCal.getTimeInMillis()) {
+//         endCal.setTime(endDate);
+//         c.setTime(startDate);
+//     }
 
     while(c.getTimeInMillis() < endCal.getTimeInMillis()) {
       if(dayOfWeek != 7 || dayOfWeek != 1){
