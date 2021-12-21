@@ -54,7 +54,7 @@ public class DaysOffCalc {
             if(answerWeekendsOff.equals("yes")) {
               int daysOffTogether = daysOff - getWorkingDaysBetweenTwoDates(startDate, endDate);
               System.out.println("---------");
-              System.out.println("There are  " + getWorkingDaysBetweenTwoDates(startDate, endDate) + " business days and " + daysOffTogether + "weekends days, so...");
+              System.out.println("There are  " + getWorkingDaysBetweenTwoDates(startDate, endDate) + " business days and " + daysOffTogether + " weekends days, so...");
 
             
             cEnd.add(Calendar.DATE, daysOffTogether);
