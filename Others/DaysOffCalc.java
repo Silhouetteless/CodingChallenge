@@ -52,9 +52,9 @@ public class DaysOffCalc {
             String answerWeekendsOff = scan.next();
 
             if(answerWeekendsOff.equals("yes")) {
-              int daysOffTogether = daysOff - getWorkingDaysBetweenTwoDates(startDate, endDate);
+              int daysOffTogether = daysOff - businessDays(startDate, endDate);
               System.out.println("---------");
-              System.out.println("There are  " + getWorkingDaysBetweenTwoDates(startDate, endDate) + " business days and " + daysOffTogether + " weekends days, so...");
+              System.out.println("There are  " + businessDays(startDate, endDate) + " business days and " + daysOffTogether + " weekends days, so...");
 
             
             cEnd.add(Calendar.DATE, daysOffTogether);
@@ -86,7 +86,7 @@ public class DaysOffCalc {
     
   }
 
-  public static int getWorkingDaysBetweenTwoDates(Date startDate, Date endDate) {
+  public static int businessDays (Date startDate, Date endDate) {
 
 
     Calendar startCal = Calendar.getInstance();
