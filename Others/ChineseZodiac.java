@@ -39,7 +39,7 @@ public class ChineseZodiac {
             int i = 1948;  
             for(n = 0; n < 99; n++){
                 if (birth == (i + (12 * n))) {
-                    System.out.println("Your Chinese Zodiac Sign: " + zodiacList.get(0));
+                    System.out.println("Your Chinese Zodiac Sign: " + zodiacList.get(0));21/
                 }
                 else if(birth == ((i+1) + (12 * n))) {
                     System.out.println("Your Chinese Zodiac Sign: " + zodiacList.get(1));

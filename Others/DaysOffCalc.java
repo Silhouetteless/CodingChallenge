@@ -69,12 +69,7 @@ public class DaysOffCalc {
               System.out.println("That's great dude, but please write 'yes' or 'no', so that I can finish my calculations.");
             }
 
-            
-
-          
-
-
-            
+        
 
         } catch (ParseException e) {
                         e.printStackTrace();
