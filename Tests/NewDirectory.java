@@ -12,6 +12,7 @@ class NewDirectory {
     boolean value = file.mkdir();
     //or use file.mkdirs(); if you want to create the parent directory as well
 
+
     if(value) {
       System.out.println("The new directory is created.");
     }
