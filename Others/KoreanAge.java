@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class KoreanAgeUpdate {
+public class KoreanAge {
     
 
     public static void main(String[] args) {
