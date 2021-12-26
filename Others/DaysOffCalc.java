@@ -19,11 +19,11 @@ public class DaysOffCalc {
             int hoursOff = timeOff % 8;
 
             System.out.println("Let me confirm: ");
-            System.out.println("You will have " + daysOff + " days off and  "  + hoursOff + " hours off.");
+            System.out.println("You will have " + daysOff + " days off and "  + hoursOff + " hours off.");
             System.out.println("---------");
 
 
-            System.out.println("Which day do you want to start your first day off: \nPlease use the format: \"dd/MM/yyyy\"");
+            System.out.println("On which day do you want to start your first day off: \nPlease use the format: \"dd/MM/yyyy\"");
 
             
 
@@ -48,22 +48,28 @@ public class DaysOffCalc {
             Date endDate = formatter.parse(dateNow);
 
             System.out.println("---------");
-            System.out.println("You should be back to work on " + dateNow + " , but wait...do you have weekends off?");
+            System.out.println("You should be back to work on " + dateNow + ", but wait...do you have weekends off?");
             String answerWeekendsOff = scan.next();
 
             if(answerWeekendsOff.equals("yes")) {
               int daysOffTogether = daysOff - businessDays(startDate, endDate);
               System.out.println("---------");
-              System.out.println("There are  " + businessDays(startDate, endDate) + " business days and " + daysOffTogether + " weekends days, so...");
+              System.out.println("There are " + businessDays(startDate, endDate) + " business days and " + daysOffTogether + " weekends days, so...");
 
             
             cEnd.add(Calendar.DATE, daysOffTogether);
             String backToWork = formatter.format(cEnd.getTime());
-            System.out.println("You should get back to work on " + backToWork);
+            System.out.println("You should get back to work on " + backToWork + ".");
+              if(hoursOff != 0) {
+                System.out.println("Remember about your " + hoursOff + " hours off.");
+              }
 
             } else if (answerWeekendsOff.equals("no")) {
               System.out.println("---------");
               System.out.println("Oh, I am sorry to hear that. In this case, I am afraid you will have to go back to work on " + dateNow);
+                if(hoursOff != 0) {
+                System.out.println("Remember about your " + hoursOff + " hours off though.");
+              }
             } else {
               System.out.println("---------");
               System.out.println("That's great dude, but please write 'yes' or 'no', so that I can finish my calculations.");
