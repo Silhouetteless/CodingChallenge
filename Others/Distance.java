@@ -12,17 +12,17 @@ class Distance {
     
       System.out.println("Enter speed in kmph: ");
     
-      speed=sc.nextDouble();	
+        speed=sc.nextDouble();	
     
       System.out.println("Enter time in hours: ");
       
-      time = scan.nextDouble();	
+        time = scan.nextDouble();	
     
       distance = speed * time;
       
-      System.out.println("Distance in kilometers: " + distance + "km");
+      System.out.println("Distance in kilometers: " + distance + "km.");
     
-      System.out.println("Distance in meters: " + distance * 1000+ "m");
+      System.out.println("Distance in meters: " + distance * 1000+ "m.");
  
       scan.close();
  
