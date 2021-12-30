@@ -27,7 +27,7 @@ public class MirroredRhombusStarPattern {
       System.out.println();
     }
                
-  scan.close();
+   scan.close();
                 
     
   }
