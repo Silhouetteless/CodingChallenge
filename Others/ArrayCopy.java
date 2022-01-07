@@ -32,6 +32,8 @@ public class ArrayCopy {
         System.arraycopy(array2, 0, bothLength, length1, length2);
 
         System.out.println("The total array is: " + Arrays.toString(bothLength));
+      
+      scan.close();
     }
 }
 
