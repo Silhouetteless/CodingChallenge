@@ -1,16 +1,21 @@
+import java.util.Scanner;
+
 public class DuplicateCharacters {
 
   public static void main(String[] args) {
 
-        String sentence = "How many duplicates are there?";
-        System.out.println(sentence);
+        System.out.println("How many duplicates are there?");
+        System.out.println("Write a sentence you would like to check: ");
+
+        Scanner scan = new Scanner(System.in);
+        String input = scan.nextLine();
 
         String characters = ""; //stores every character that we come accross
 
         String duplicates = "";
 
-        for(int i = 0; i < sentence.length(); i++) {
-          String current = Character.toString(sentence.charAt(i));
+        for(int i = 0; i < input.length(); i++) {
+          String current = Character.toString(input.charAt(i));
           if(characters.contains(current)) {
             if(!duplicates.contains(current)) {
             duplicates += current + ",";
