@@ -8,8 +8,6 @@ public class FactorialProgram{
     */
     System.out.println(factorial(5));
 
-
-
   }
 
   public static int factorial(int n) {
@@ -18,9 +16,8 @@ public class FactorialProgram{
         return 1; //basecase
     } else {
         return n * factorial(n - 1);
-    }
+      }
 
-    
 
   }
 
